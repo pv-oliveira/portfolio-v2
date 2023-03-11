@@ -70,8 +70,8 @@ const Testimonial = () => {
   );
 };
 
-export default AppWrap(
-  MotionWrap(Testimonial, 'app__testimonial'),
-  'testimonial',
-  'app__primarybg',
+export default AppWrap({
+  Component: MotionWrap(Testimonial, 'app__testimonial'),
+  idName: 'testimonial',
+  classNames: 'app__primarybg'}
 );

@@ -108,8 +108,8 @@ const Work = () => {
   );
 };
 
-export default AppWrap(
-  MotionWrap(Work, 'app__works'),
-  'work',
-  'app__primarybg',
+export default AppWrap({
+  Component: MotionWrap(Work, 'app__works'),
+  idName: 'work',
+  classNames: 'app__primarybg',}
 );

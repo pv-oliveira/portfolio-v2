@@ -11,7 +11,7 @@ const About = () => {
 
   useEffect(() => {
     const query = '*[_type == "abouts"]';
-
+console.log(query)
     client.fetch(query).then((data) => {
       setAbouts(data);
     });
@@ -47,8 +47,8 @@ const About = () => {
   );
 };
 
-export default AppWrap(
-  MotionWrap(About, "app__about"),
-  "about",
-  "app__whitebg"
+export default AppWrap({
+  Component: MotionWrap(About, "app__about"),
+  idName: "about",
+  classNames: "app__whitebg"}
 );

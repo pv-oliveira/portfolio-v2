@@ -87,8 +87,8 @@ const Skills: React.FC = () => {
   );
 };
 
-export default AppWrap(
-  MotionWrap(Skills, 'app__skills'),
-  'skills',
-  'app__whitebg',
+export default AppWrap({
+  Component: MotionWrap(Skills, 'app__skills'),
+  idName: 'skills',
+  classNames: 'app__whitebg'}
 );

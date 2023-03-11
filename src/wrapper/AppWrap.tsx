@@ -1,7 +1,13 @@
 import React from 'react';
 import { NavigationDots, SocialMedia } from '../components';
 
-const AppWrap = (Component: any, idName: string, classNames: any) => function HOC() {
+interface Props{
+  Component: React.FunctionComponent,
+  idName: string,
+  classNames?: string
+}
+
+const AppWrap = ({Component, idName, classNames}: Props) => function HOC() {
   return (
     <div id={idName} className={`app__container ${classNames}`}>
       <SocialMedia />
@@ -9,7 +15,7 @@ const AppWrap = (Component: any, idName: string, classNames: any) => function HO
         <Component />
 
         <div className="copyright">
-          <p className="p-text">@2020 MICHAEL</p>
+          <p className="p-text">@2022 Paulo</p>
           <p className="p-text">All rights reserved</p>
         </div>
       </div>
