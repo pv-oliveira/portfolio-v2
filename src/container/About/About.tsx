@@ -6,12 +6,18 @@ import { urlFor, client } from "../../client";
 
 import "./About.scss";
 
+type About = {
+  _id: string;
+  title: string;
+  description: string;
+  imgUrl: HTMLImageElement;
+};
+
 const About = () => {
-  const [abouts, setAbouts] = useState<any>([]);
+  const [abouts, setAbouts] = useState<About[]>([]);
 
   useEffect(() => {
     const query = '*[_type == "abouts"]';
-console.log(query)
     client.fetch(query).then((data) => {
       setAbouts(data);
     });
@@ -25,7 +31,7 @@ console.log(query)
       </h2>
 
       <div className="app__profiles">
-        {abouts.map((about: any, index: number) => (
+        {abouts.map((about, index) => (
           <motion.div
             whileInView={{ opacity: 1 }}
             whileHover={{ scale: 1.1 }}
@@ -50,5 +56,5 @@ console.log(query)
 export default AppWrap({
   Component: MotionWrap(About, "app__about"),
   idName: "about",
-  classNames: "app__whitebg"}
-);
+  classNames: "app__whitebg",
+});

@@ -1,6 +1,10 @@
 import React from 'react';
 
-const NavigationDots = ({ active }: any) => (
+type NavigationProps = {
+  active: string
+}
+
+const NavigationDots = ({ active }: NavigationProps) => (
   <div className="app__navigation">
     {['home', 'about', 'work', 'skills', 'testimonial', 'contact'].map((item, index) => (
       <a

@@ -12,7 +12,7 @@ const Footer = () => {
 
   const { username, email, message } = formData;
 
-  const handleChangeInput = (e: any) => {
+  const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)  => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
